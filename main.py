@@ -1,12 +1,13 @@
-# This is a sample Python script.
-from characters import setup, Rank
 
-# Press the green button in the gutter to run the script.
+from all_characters import setup
+from character import Rank, Character, find_char_in_list, find_best_char_opt
+
 if __name__ == '__main__':
     chars = setup()
+    # owned = [Character("Sogeking", Rank.UNCOMMON, find_char_in_list(chars, "Usopp") * 2, "")]
+    # print(find_best_char_opt(chars, list(owned)))
     for char in chars:
         # print(chars[-3].get_repr_all_commons())
         print(f"{char.__repr__()} - {char.get_repr_all_commons()}\n")
     # for rank in Rank:
     #     print(f"{rank}: {rank.name} - {rank.value}")
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
