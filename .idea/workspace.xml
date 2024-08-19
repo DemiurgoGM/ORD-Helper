@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="03d7e9ee-ab09-4b86-9174-86e6b0ca8e66" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/ORD.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/characters.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-    </list>
+    <list default="true" id="03d7e9ee-ab09-4b86-9174-86e6b0ca8e66" name="Changes" comment="Initial commit for One Piece Random Defense Helper.&#10;&#10;Big goal: Make a function to detect best unit to go for given a number of commons.&#10;Steps: Improve add function (isinstance Character)&#10;Create an input function (Future make a web app?)" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -92,12 +83,25 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1724020336204</updated>
-      <workItem from="1724020337555" duration="9610000" />
+      <workItem from="1724020337555" duration="10387000" />
     </task>
+    <task id="LOCAL-00001" summary="Initial commit for One Piece Random Defense Helper.&#10;&#10;Big goal: Make a function to detect best unit to go for given a number of commons.&#10;Steps: Improve add function (isinstance Character)&#10;Create an input function (Future make a web app?)">
+      <option name="closed" value="true" />
+      <created>1724030814808</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1724030814808</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial commit for One Piece Random Defense Helper.&#10;&#10;Big goal: Make a function to detect best unit to go for given a number of commons.&#10;Steps: Improve add function (isinstance Character)&#10;Create an input function (Future make a web app?)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial commit for One Piece Random Defense Helper.&#10;&#10;Big goal: Make a function to detect best unit to go for given a number of commons.&#10;Steps: Improve add function (isinstance Character)&#10;Create an input function (Future make a web app?)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -111,6 +115,6 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/ORD$main.coverage" NAME="main Coverage Results" MODIFIED="1724029954516" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ORD$main.coverage" NAME="main Coverage Results" MODIFIED="1724030461363" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
