@@ -4,7 +4,7 @@ from character import Rank, Character, find_char_in_list, find_best_char_opt
 
 if __name__ == '__main__':
     chars = setup()
-    # owned = [Character("Sogeking", Rank.UNCOMMON, find_char_in_list(chars, "Usopp") * 2, "")]
+    # owned = find_char_in_list(chars, "Usopp") * 3 + find_char_in_list(chars, "Nami")*3 +find_char_in_list(chars, "Swordsman") * 5
     # print(find_best_char_opt(chars, list(owned)))
     for char in chars:
         # print(chars[-3].get_repr_all_commons())
