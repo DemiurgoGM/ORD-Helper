@@ -7,14 +7,14 @@ def setup() -> list[Character]:
 
     # ALL OTHER-RANKING CHARACTERS
     all_characters = all_characters + [
-        Character("Wood", Rank.OTHER, ()),
+        Character("Wood", Rank.OTHER, (), other=1),
         Character("Lucky Token", Rank.OTHER, ()),
         Character("Kuma TR", Rank.OTHER, ()),
-        Character("Save Count", Rank.OTHER, ()),
+        Character("Save Count", Rank.OTHER, (), other=1),
         Character("Zombie", Rank.OTHER, ()),
         Character("Expansion Pack", Rank.OTHER, ()),
-        Character("Gold", Rank.OTHER, ()),
-        Character("Item", Rank.OTHER, ()),
+        Character("Gold", Rank.OTHER, (), other=1000),
+        Character("Item", Rank.OTHER, (), other=""),
         Character("Pirate Ship", Rank.OTHER, ()),
         Character("Ancient Ship", Rank.OTHER, ()),
         Character("Rayleigh", Rank.OTHER, ()),
@@ -436,6 +436,8 @@ def setup() -> list[Character]:
                                                  find_char_in_list(all_characters, "Jinbe"),)),
 
     ]
+
+
     # all_characters = all_characters + [
     #     Character("wisp", Rank.HIDDEN, ())
     # ]

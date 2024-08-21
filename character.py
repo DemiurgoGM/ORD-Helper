@@ -67,13 +67,7 @@ class Character:
         :return: A string listing all common materials and their quantities.
         """
         comms = self.get_all_commons()  # Retrieve all common materials
-        retorno = "["  # Initialize the string representation
-        name_count = defaultdict(int)  # Dictionary to count occurrences of each material by name
-        for character in comms:
-            name_count[character.name] += 1  # Count the occurrences of each material name
-        for name, count in name_count.items():
-            retorno += "x" + str(count) + " " + name + ", "  # Add each material and its count to the string
-        return retorno[:-2] + "]"  # Return the string, trimming the trailing comma and space
+        return format_missing_char(comms)
 
     def get_missing_commons(self, owned: list) -> list:
         """
@@ -103,7 +97,10 @@ class Character:
         :return: A tuple of repeated Character objects.
         """
         if isinstance(other, int):
-            return tuple(Character(self.name, self.rank, self.materials, self.command) for _ in range(other))
+            if str(other) == str(0):
+                return tuple(Character(self.name, self.rank, self.materials, self.command, self.other) for _ in range(other))
+            else:
+                return Character(self.name, self.rank, self.materials, self.command, self.other*other)
         else:
             raise TypeError("Expected int but got " + str(type(other)))
 
@@ -135,14 +132,11 @@ class Character:
         if isinstance(other, list):
             return other + [self]
         if isinstance(other, Character):
-            if self.rank == other.rank and self.rank == Rank.OTHER and self.name == other.name:
-                # Combine two characters if they have the same rank and name
-                return Character(self.name, self.rank, self.materials, self.command, self.other + other.other)
             return Character(self.name, self.rank, self.materials, self.command), other
         if isinstance(other, int):
-            return Character(self.name, self.rank, self.materials, self.command, self.other + other)
+            return Character(self.name, self.rank, self.materials, self.command, int(self.other) + other)
         if isinstance(other, str):
-            return Character(self.name, self.rank, self.materials, self.command, other)
+            return Character(self.name, self.rank, self.materials, self.command, str(self.other) + other)
         else:
             raise TypeError("Expected Character or tuple, got " + str(type(other)))
 
@@ -213,8 +207,69 @@ def find_best_char_opt(char_list: list[Character], owned: list[Character]) -> li
     """
 
     best_chars = [char for char in char_list if char.rank == Rank.LEGENDARY]  # Filter characters with the best rank
-    missings = [(char, char.get_missing_commons(deepcopy(owned))) for char in
-                best_chars]  # Determine missing materials for each character
+    # Determine missing materials for each character
+    missings = [(char, char.get_missing_commons(deepcopy(owned))) for char in best_chars]
     retorno = sorted(missings, key=lambda x: len(x[1]))  # Sort the characters by the number of missing materials
 
     return retorno
+
+
+def format_missing_char(chars: list[Character]) -> str:
+    """
+    Generate a formatted string that lists the names of characters and their counts from a given list of Character objects.
+
+    :param chars: A list of Character objects, potentially containing duplicates.
+    :return: A string that represents the characters and their counts in the format "[xN Name, xM Name, ...]".
+    """
+    retorno = "["  # Initialize the string representation
+    name_count = defaultdict(int)  # Dictionary to count occurrences of each character's name
+
+    # Iterate over the list of Character objects
+    for character in chars:
+        if str(character.other) != str(0):
+            name_count[character.name] += character.other
+        else:
+            name_count[character.name] += 1  # Increment the count for each character name
+
+    # Build the formatted string with character names and their respective counts
+    for name, count in name_count.items():
+        retorno += "x" + str(count) + " " + name + ", "  # Append the count and name to the string
+
+    return retorno[:-2] + "]"  # Return the string, removing the trailing comma and space, and closing with a bracket
+
+
+def find_possible_evolutions(all_characters: list[Character], character: Character) -> list[Character]:
+    """
+    Finds and returns a list of characters for which the given character can serve as a material,
+    either directly or indirectly (through recursive chains of materials).
+
+    The results are sorted by the rank of the characters in descending order, with higher-ranked characters appearing first.
+
+    :param all_characters: A list of all possible characters in the game.
+    :param character: The character to check as a potential material for others.
+    :return: A sorted list of characters that can use the given character as a material, directly or indirectly.
+    """
+    # filtered = list(filter(lambda char_: char_.rank == Rank.LEGENDARY, all_characters))
+    filtered = all_characters
+
+    # Helper function to perform recursive search
+    def is_material_for(target: Character, material: Character) -> bool:
+        # Base case: if the material is directly in the target's materials
+        if material.rank > target.rank:
+            return False
+        if target.rank == material.rank:
+            return target == material
+        # Recursive case: check if the material is indirectly used in the target's materials
+        for sub_material in target.materials:
+            if is_material_for(sub_material, material):
+                return True
+        return False
+
+    possible_evolutions = []
+
+    # Iterate over all characters in the list
+    for char in filtered:
+        if is_material_for(char, character):
+            possible_evolutions.append(char)
+
+    return possible_evolutions
