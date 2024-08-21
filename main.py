@@ -38,7 +38,6 @@ def see_best_opt_chars(owned_: tuple) -> None:
 
 if __name__ == '__main__':
     print()
-    owned = find_char_in_list(all_characters, "Luffy") * 3 + find_char_in_list(all_characters, "Chopper") * 3 + find_char_in_list(all_characters,
-                                                                                                                "Buggy") * 5
-    see_best_opt_chars(owned)
-    # see_all_chars()
+    # owned = find_char_in_list(all_characters, "Luffy") * 3 + find_char_in_list(all_characters, "Chopper") * 3 + find_char_in_list(all_characters, "Buggy") * 5
+    # see_best_opt_chars(owned)
+    see_all_chars()

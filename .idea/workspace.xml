@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="03d7e9ee-ab09-4b86-9174-86e6b0ca8e66" name="Changes" comment="Addition of comments&#10;Improvement of readme&#10;addition of legendary characters">
+    <list default="true" id="03d7e9ee-ab09-4b86-9174-86e6b0ca8e66" name="Changes" comment="Improve of main tests&#10;Improvement of use of the &quot;other&quot; attribute of class Character.&#10;New function to check all evolutions of a given character.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all_characters.py" beforeDir="false" afterPath="$PROJECT_DIR$/all_characters.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/character.py" beforeDir="false" afterPath="$PROJECT_DIR$/character.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +89,7 @@
       <workItem from="1724020337555" duration="14741000" />
       <workItem from="1724079441431" duration="24348000" />
       <workItem from="1724130025218" duration="336000" />
-      <workItem from="1724197344859" duration="1314000" />
+      <workItem from="1724197344859" duration="2656000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit for One Piece Random Defense Helper.&#10;&#10;Big goal: Make a function to detect best unit to go for given a number of commons.&#10;Steps: Improve add function (isinstance Character)&#10;Create an input function (Future make a web app?)">
       <option name="closed" value="true" />
@@ -126,7 +123,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724113459949</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Improve of main tests&#10;Improvement of use of the &quot;other&quot; attribute of class Character.&#10;New function to check all evolutions of a given character.">
+      <option name="closed" value="true" />
+      <created>1724199674347</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1724199674347</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,7 +141,8 @@
     <MESSAGE value="Initial commit for One Piece Random Defense Helper.&#10;&#10;Big goal: Make a function to detect best unit to go for given a number of commons.&#10;Steps: Improve add function (isinstance Character)&#10;Create an input function (Future make a web app?)" />
     <MESSAGE value="Added function to detect the closest Rare based on given characters.&#10;Added rares.&#10;Moved Characters to its own file." />
     <MESSAGE value="Addition of comments&#10;Improvement of readme&#10;addition of legendary characters" />
-    <option name="LAST_COMMIT_MESSAGE" value="Addition of comments&#10;Improvement of readme&#10;addition of legendary characters" />
+    <MESSAGE value="Improve of main tests&#10;Improvement of use of the &quot;other&quot; attribute of class Character.&#10;New function to check all evolutions of a given character." />
+    <option name="LAST_COMMIT_MESSAGE" value="Improve of main tests&#10;Improvement of use of the &quot;other&quot; attribute of class Character.&#10;New function to check all evolutions of a given character." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -97,7 +97,7 @@ class Character:
         :return: A tuple of repeated Character objects.
         """
         if isinstance(other, int):
-            if str(other) == str(0):
+            if str(self.other) == str(0):
                 return tuple(Character(self.name, self.rank, self.materials, self.command, self.other) for _ in range(other))
             else:
                 return Character(self.name, self.rank, self.materials, self.command, self.other*other)
